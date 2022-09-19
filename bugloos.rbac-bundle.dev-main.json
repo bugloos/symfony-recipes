@@ -10,7 +10,10 @@
         "copy-from-package": {
           "recipe/Command/RbacInitCommand.php": "%SRC_DIR%/Command/RbacInitCommand.php",
           "recipe/Rules/AuthorRule.php": "%SRC_DIR%/Security/Rules/AuthorRule.php",
-          "recipe/Voter/GlobalVoter.php": "%SRC_DIR%/Security/Voter/GlobalVoter.php"
+          "recipe/Voter/GlobalVoter.php": "%SRC_DIR%/Security/Voter/GlobalVoter.php",
+          "recipe/Entity/Assignment.php": "%SRC_DIR%/Entity/Assignment.php",
+          "recipe/Entity/Item.php": "%SRC_DIR%/Entity/Item.php",
+          "recipe/Entity/Rule.php": "%SRC_DIR%/Entity/Rule.php"
         },
         "copy-from-recipe": {
           "config/": "%CONFIG_DIR%/",
@@ -39,13 +42,16 @@
             "rbac:",
             "    driver: '%env(RBAC_DRIVER)%'",
             "    user_entity: App\\Entity\\User",
+            "    assignment_entity: App\\Entity\\Assignment",
+            "    item_entity: App\\Entity\\Item",
+            "    rule_entity: App\\Entity\\Rule",
             "    default_roles: [DEFAULT_USER]",
             ""
           ],
           "executable": false
         }
       },
-      "ref": "ef4935b117d43d9d94307f2ab4d5093a788259c7"
+      "ref": "a4cd63f10b71c5875098d25528fe0813e5bd852d"
     }
   }
 }
