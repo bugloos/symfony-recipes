@@ -1,0 +1,51 @@
+{
+  "manifests": {
+    "bugloos/rbac-bundle": {
+      "manifest": {
+        "bundles": {
+          "Bugloos\\RbacBundle\\RbacBundle": [
+            "all"
+          ]
+        },
+        "copy-from-package": {
+          "recipe/Command/RbacInitCommand.php": "%SRC_DIR%/Command/RbacInitCommand.php",
+          "recipe/Rules/AuthorRule.php": "%SRC_DIR%/Security/Rules/AuthorRule.php",
+          "recipe/Voter/GlobalVoter.php": "%SRC_DIR%/Security/Voter/GlobalVoter.php"
+        },
+        "copy-from-recipe": {
+          "config/": "%CONFIG_DIR%/",
+          "src/": "%SRC_DIR%/"
+        },
+        "env": {
+          "#1": "Available drivers described at https://git.bugloos.work/bundles/rbac-bundle",
+          "#3": "",
+          "#4": "RBAC_DRIVER=\"Bugloos\\\\RbacBundle\\\\Managers\\\\DatabaseManager\"",
+          "RBAC_DRIVER": "Bugloos\\RbacBundle\\Managers\\PhpManager"
+        },
+        "post-install-output": [
+          "  * Your Role Base Access Control almost ready:",
+          "    1. Update <info>Src/Security/Rules/AuthorRule.php</info> based on your needs",
+          "    2. Change <info>Src/Security/Voter/GlobalVoter.php</info> to get more safety for role checking.",
+          "    3. Update <info>Src/Command/RbacInitCommand.php</info> to add basic roles and permissions and",
+          "       use <comment>bin/console rbac:init</> to initialize roles and permissions.",
+          "",
+          "  * For more information <fg=blue>Read</> documentation at <comment>https://git.bugloos.work/bundles1/rbac-bundle</>",
+          "  * Also you can change your driver based on your needs in the <comment>.env</> file"
+        ]
+      },
+      "files": {
+        "config/packages/rbac.yaml": {
+          "contents": [
+            "rbac:",
+            "    driver: '%env(RBAC_DRIVER)%'",
+            "    user_entity: App\\Entity\\User",
+            "    default_roles: [DEFAULT_USER]",
+            ""
+          ],
+          "executable": false
+        }
+      },
+      "ref": "ef4935b117d43d9d94307f2ab4d5093a788259c7"
+    }
+  }
+}

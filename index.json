@@ -1,0 +1,15 @@
+{
+  "recipes": {
+    "bugloos/rbac-bundle": [
+      "dev-main",
+      "1.0"
+    ]
+  },
+  "branch": "main",
+  "is_contrib": true,
+  "_links": {
+    "repository": "github.com/bugloos/symfony-recipes",
+    "origin_template": "{package}:{version}@github.com/bugloos/symfony-recipes:main",
+    "recipe_template": "https://api.github.com/repos/bugloos/symfony-recipes/contents/{package_dotted}.{version}.json"
+  }
+}

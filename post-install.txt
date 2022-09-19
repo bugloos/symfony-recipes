@@ -1,0 +1,8 @@
+  * Your Role Base Access Control almost ready:
+    1. Update <info>Src/Security/Rules/AuthorRule.php</info> based on your needs
+    2. Change <info>Src/Security/Voter/GlobalVoter.php</info> to get more safety for role checking.
+    3. Update <info>Src/Command/RbacInitCommand.php</info> to add basic roles and permissions and
+       use <comment>bin/console rbac:init</> to initialize roles and permissions.
+
+  * For more information <fg=blue>Read</> documentation at <comment>https://git.bugloos.work/bundles1/rbac-bundle</>
+  * Also you can change your driver based on your needs in the <comment>.env</> file
