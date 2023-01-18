@@ -14,6 +14,9 @@
   "_links": {
     "repository": "github.com/bugloos/symfony-recipes",
     "origin_template": "{package}:{version}@github.com/bugloos/symfony-recipes:main",
-    "recipe_template": "https://api.github.com/repos/bugloos/symfony-recipes/contents/{package_dotted}.{version}.json"
+    "recipe_template": "https://api.github.com/repos/bugloos/symfony-recipes/contents/{package_dotted}.{version}.json",
+    "recipe_template_relative": "{package_dotted}.{version}.json",
+    "archived_recipes_template": "https://api.github.com/repos/bugloos/symfony-recipes/contents/archived/{package_dotted}/{ref}.json",
+    "archived_recipes_template_relative": "archived/{package_dotted}/{ref}.json"
   }
 }
