@@ -12,35 +12,39 @@
           "recipe/EventSubscriber/": "%SRC_DIR%/EventSubscriber/",
           "recipe/Repository/": "%SRC_DIR%/Repository/",
           "recipe/DataFixtures/": "%SRC_DIR%/DataFixtures/"
-        }
-      },
-      "post-install-output": [
-        "  * Your email template bundle almost ready:",
-        "     1. related entities and repositories added into platform, and you can justify them as you want",
-        "     2. An event listener also added, and you can use it to log emails, change email data and so on...",
-        "     3. An example of data fixture also added, and you can see how to populate data into database",
-        "     4. To see how to use bundle for sending emails please view readme file",
-        "",
-        "  * For more information <fg=blue>Read</> documentation at <comment>https://git.bugloos.work/bundles/bugloos-mail-bundle</>"
-      ],
-      "files": {
-        "config/packages/bugloos_email.yaml": {
-          "contents": [
-            "bugloos_email:",
-            "    base_template: \"@BugloosEmail/email.html.twig\"",
-            "    template_entity: App\\Entity\\Template",
-            "    template_entity_unique_fields: ['event', 'language']",
-            "    token_entity: App\\Entity\\Token",
-            "    token_entity_unique_fields: ['name']",
-            "    event_entity: App\\Entity\\Event",
-            "#    custom_tokens: ",
-            "#                  base_url: \"%env(resolve:BASE_URL)%\"",
-            ""
-          ],
-          "executable": false
-        }
-      },
-      "ref": "e80a9a3b725e07dd90778da68b0808cc682353d2"
+        },
+        "copy-from-recipe": {
+          "config/": "%CONFIG_DIR%/",
+          "src/": "%SRC_DIR%/"
+        },
+        "post-install-output": [
+          "  * Your email template bundle almost ready:",
+          "     1. related entities and repositories added into platform, and you can justify them as you want",
+          "     2. An event listener also added, and you can use it to log emails, change email data and so on...",
+          "     3. An example of data fixture also added, and you can see how to populate data into database",
+          "     4. To see how to use bundle for sending emails please view readme file",
+          "",
+          "  * For more information <fg=blue>Read</> documentation at <comment>https://git.bugloos.work/bundles/bugloos-mail-bundle</>"
+        ],
+        "files": {
+          "config/packages/bugloos_email.yaml": {
+            "contents": [
+              "bugloos_email:",
+              "    base_template: \"@BugloosEmail/email.html.twig\"",
+              "    template_entity: App\\Entity\\Template",
+              "    template_entity_unique_fields: ['event', 'language']",
+              "    token_entity: App\\Entity\\Token",
+              "    token_entity_unique_fields: ['name']",
+              "    event_entity: App\\Entity\\Event",
+              "#    custom_tokens: ",
+              "#                  base_url: \"%env(resolve:BASE_URL)%\"",
+              ""
+            ],
+            "executable": false
+          }
+        },
+        "ref": "4b087fcece3ef0f2f0eb7dec9bfb26555ca86b05"
+      }
     }
   }
 }
